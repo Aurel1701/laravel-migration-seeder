@@ -18,5 +18,8 @@ Route::get('/', function () {
 });
 
 Route::get('/principal', function () {
-    return view('principal');
+    $travels = Travel::all();  
+    return view('principal', compact('travels'));
 });
+
+Route::get('/', 'PageController@index');
